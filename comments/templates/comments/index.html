@@ -1,0 +1,19 @@
+{% block content %}
+<div class="features">
+
+{%csrf_token%}
+{% if record_list %}
+{% for record in record_list %}
+    <p>
+    <h1>{{record.new_titile }}</h1>
+    <p>{{record.new_link}}</p>
+    <p>Date - {{record.new_creation_date}}</p>
+    <p>Author - {{record.new_author_name}}</p>
+    <p>Votes - {{record.new_votes}}</p>
+
+{% endfor %}
+{% else %}
+  <p>No news are available.</p>
+{% endif %}
+</div>
+{% endblock content %}
